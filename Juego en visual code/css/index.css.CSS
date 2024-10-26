@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(135deg, #ff5733, #ffbd33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.8);
+    border: 5px solid #e74c3c;
+}
+
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+h1, h2 {
+    font-size: 3rem;
+    color: #f1c40f;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #e74c3c;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px solid #e74c3c;
+    background-color: #3498db;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1);
+}
+
+button.hidden {
+    display: none;
+}
+
+.levels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.level {
+    background-color: #e74c3c;
+    color: white;
+    border: 3px solid #f39c12;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 10px 0;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.level:hover:not(.locked) {
+    background-color: #f39c12;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.locked {
+    background-color: #7f8c8d; /* Color para niveles bloqueados */
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.option {
+    background-color: #e74c3c;
+    color: white;
+    border: 3px solid #f39c12;
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+}
+
+.option:hover {
+    background-color: #f39c12;
+    transform: scale(1.1);
+    color: #fff;
+}
+
+#payaso {
+    width: 150px;
+    margin-bottom: 20px;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.fall {
+    transform: translateY(400px) rotate(360deg); /* Caída con rotación */
+    opacity: 0; /* Desaparece tras la caída */
+}
+
+.burlarse {
+    transform: translateY(-30px) rotate(-15deg); /* Movimiento de burla */
+    transition: transform 0.5s ease;
+}
+
+#splash {
+    width: 200px;
+    height: 200px;
+    background: url('pngwing.com.png') no-repeat center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.show-splash {
+    opacity: 1;
+}
+
+#feedback {
+    margin-top: 20px;
+    font-size: 2rem;
+    text-shadow: 2px 2px #e74c3c;
+}
+
+#feedback.correct {
+    color: #2ecc71;
+}
+
+#feedback.incorrect {
+    color: #e74c3c;
+}
+
+/* Estilo de las instrucciones */
+.instructions {
+    list-style-type: square;
+    text-align: left;
+    color: #ecf0f1;
+    margin: 20px auto;
+    font-size: 1.3rem;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+}
+
+/* Fondo decorativo */
+.background-image {
+    width: 60%;
+    height: auto;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+#congratulations-message {
+    margin-top: 20px;
+    font-size: 1.8rem;
+    color: #2ecc71;
+    text-shadow: 2px 2px #e74c3c;
+}
+
+.hidden {
+    display: none;
+}

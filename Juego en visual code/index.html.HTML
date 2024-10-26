@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chistosín</title>
+    <link rel="stylesheet" href="css/index.CSS">
+</head>
+<body>
+    <audio id="start-sound" src="Audio/merner-pop-117203.mp3" preload="auto"></audio>
+    <audio id="correct-sound" src="Audio/correct-98705.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="Audio/error-4-199275.mp3" preload="auto"></audio>
+    <audio id="level-up-sound" src="Audio/scale-e6-14577.mp3" preload="auto"></audio>
+    <audio id="win-sound" src="Audio/violin-win-5-185128.mp3" preload="auto"></audio>
+    <div class="container">
+        <!-- Pantalla de Inicio -->
+        <div id="start-screen" class="screen active">
+            <h1>¡Bienvenido al Juego del Payaso Chistosín!</h1>
+            <p>Diviértete mientras aprendes</p>
+            <img src="img/clown-little-clown.gif" alt="Fondo de Feria" class="background-image">
+            <button id="start-btn">¡Empezar el Juego!</button>
+        </div>
+
+        <!-- Pantalla de Instrucciones -->
+        <div id="instructions-screen" class="screen">
+            <h2>Instrucciones:</h2>
+            <ul class="instructions">
+                <li>Elige la respuesta correcta entre las opciones.</li>
+                <li>Si aciertas, ¡el payaso caerá hacia abajo!</li>
+                <li>Si fallas, ¡dara un pequeño salto!</li>
+                <li>Puedes regresar al menú en cualquier momento.</li>
+            </ul>
+            <button id="continue-btn">Continuar</button>
+        </div>
+
+        <!-- Pantalla del Mapa de Niveles -->
+        <div id="level-map" class="screen">
+            <h2>Selecciona un Nivel</h2>
+            <div class="levels">
+                <button class="level" id="level-1">Nivel 1</button>
+                <button class="level locked" id="level-2" disabled>Nivel 2</button>
+                <button class="level locked" id="level-3" disabled>Nivel 3</button>
+                <button class="level locked" id="level-4" disabled>Nivel 4</button>
+                <button class="level locked" id="level-5" disabled>Nivel 5</button>
+            </div>
+             <!-- Botón para volver a la pantalla inicial -->
+    <button id="back-to-start-btn">Volver al Inicio</button>
+     <!-- Contenedor para el mensaje de felicitación -->
+     <div id="congratulations-message" class="hidden">
+        <h3>¡Felicitaciones! Completaste los 5 niveles.</h3>
+     </div>
+        </div>
+
+        <!-- Pantalla de Preguntas -->
+        <div id="quiz-screen" class="screen">
+            <img src="img/clown-little-clown (1).gif" alt="Payaso" id="payaso">
+            <div id="splash"></div> <!-- Contenedor para la salpicadura de agua -->
+            <h2 id="question">Pregunta</h2>
+            <div class="options">
+                <button class="option" id="option1" onclick="selectOption(1)">Opción 1</button>
+                <button class="option" id="option2" onclick="selectOption(2)">Opción 2</button>
+                <button class="option" id="option3" onclick="selectOption(3)">Opción 3</button>
+            </div>
+            <div id="feedback"></div>
+            <button id="retry-btn" class="hidden">Volver a Intentar</button>
+            <button id="next-level-btn" class="hidden">Volver al Mapa de Niveles</button>
+        </div>
+
+ <!-- Pantalla de Fin -->
+<div id="end-screen" class="screen">
+    <h2>¡Felicitaciones!</h2>
+    <p>¡Has completado todos los niveles!</p>
+    <button id="restart-btn">Reiniciar Juego</button>
+</div>
+
+<!-- Pantalla de Felicitación final -->
+<div id="final-congratulations-screen" class="screen">
+    <h2>¡Increíble!</h2>
+    <p>¡Has completado todos los 5 niveles!</p>
+    <button id="menu-btn">Volver al Menú</button>
+</div>
+
+    <script src="js/index.JS"></script>
+ </body>
+</html>
